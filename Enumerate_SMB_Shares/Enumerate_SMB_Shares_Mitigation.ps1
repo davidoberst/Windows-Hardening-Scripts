@@ -1,5 +1,9 @@
-﻿#Anonymous SAM Account and Share Enumeration (Mitigation)
-
-Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\Lsa' -Name 'RestrictAnonymous' -Value 1 -Type DWord -Force
-Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\Lsa' -Name 'RestrictAnonymousSAM' -Value 1 -Type DWord -Force
-Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Services\LanManServer\Parameters' -Name 'RestrictNullSessAccess' -Value 1 -Type DWord -Force
+﻿
+if(Test-Path 'HKLM:\SYSTEM\CurrentControlSet\Control\Lsa'){
+Write-Host "Route Founded..."
+Set-Location 'HKLM:\SYSTEM\CurrentControlSet\Control\Lsa'
+Get-ChildItem
+}
+else{
+Write-Warning "Route not founded..."
+}
