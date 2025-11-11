@@ -9,5 +9,5 @@ Set-ItemProperty
 
 }
 else{
-Write-Warning "Route not founded..."
+Write-Warning "Route not founded!"
 }
