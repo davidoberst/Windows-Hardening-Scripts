@@ -1,0 +1,7 @@
+---Verifies if the group policy Network Security: Restrict NTLM: Incoming NTLM traffic, located in Computer Configurations\Policies\Windows Settings\Security Settings\Local Policies\Security Options is configured to deny incoming traffic from all accounts.
+- If this setting is not configured properly, an attacker can target a Domain Controller using an NTLM relay attack (dubbed PetitPotam).
+
+
+---To safeguard against this line of attack, the Windows maker is recommending that customers disable NTLM authentication on the domain controller. In the event NTLM cannot be turned off for compatibility reasons, the company is urging users to take one of the two steps below:
+- Disable NTLM on any AD CS Servers in your domain using the group policy Network security: Restrict NTLM: Incoming NTLM traffic.
+- Disable NTLM for Internet Information Services (IIS) on AD CS Servers in the domain running the "Certificate Authority Web Enrollment" or "Certificate Enrollment Web Service" services
